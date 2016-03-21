@@ -1,7 +1,7 @@
 package DomaineVoiture;
 
 import java.util.Observable;
-
+//
 public class Voiture extends Observable {
 
 	private int x;
