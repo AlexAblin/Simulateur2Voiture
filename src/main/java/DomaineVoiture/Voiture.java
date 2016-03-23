@@ -36,7 +36,7 @@ public class Voiture extends Observable {
 	}
 
 	private void miseAJourPositionY() {
-		if (directionEnDegres != 0)
+		if (directionEnDegres == 90)
 			y += vitesseMetreSeconde;
 		else if(directionEnDegres==270)
 			y -= vitesseMetreSeconde;
