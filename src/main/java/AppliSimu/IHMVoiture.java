@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import DomaineVoiture.Route;
 import DomaineVoiture.Voiture;
 
 public class IHMVoiture extends JFrame implements Observer{
@@ -21,6 +22,7 @@ public class IHMVoiture extends JFrame implements Observer{
 	private double paramatreConversionMetresPixels = 0.5;
 	private Voiture maVoiture;
 	private CommandeVoiture maCommandeVoiture;
+    private Route r;
 	
 	private void initGraphique() {
 		this.setTitle("Simulateur de Voiture");
@@ -30,11 +32,12 @@ public class IHMVoiture extends JFrame implements Observer{
 
 		this.setVisible(true);
 	}
-	
+
 	public IHMVoiture(Voiture maVoiture) {
 		super();
 		this.maVoiture = maVoiture;
 		maVoiture.addObserver(this);
+        r = new Route(this);
 		initGraphique();
 	}
 
@@ -43,7 +46,7 @@ public class IHMVoiture extends JFrame implements Observer{
 		initGraphique();
 		this.maVoiture = null;
 	}
-	
+
 	public int calculerPositionPixels(int xMetres) {
 		return (int) (paramatreConversionMetresPixels * xMetres);	
 	}
@@ -57,7 +60,8 @@ public class IHMVoiture extends JFrame implements Observer{
 	public void paint(Graphics contexteGraphique) {
 		super.paint(contexteGraphique);
 		contexteGraphique.setColor(Color.black);
-		dessinerRoute(contexteGraphique);
+		r.dessinerRouteHorizontale(contexteGraphique);
+        r.dessinerRouteVerticale(contexteGraphique);
 		contexteGraphique.setColor(Color.red);
 		dessinerVoiture(contexteGraphique);
 	}
@@ -69,11 +73,5 @@ public class IHMVoiture extends JFrame implements Observer{
 		contexteGraphique.fillRect(xPixel, 300, 30, 15);
 	}
 
-	private void dessinerRoute(Graphics contexteGraphique){
-		contexteGraphique.fillRect(10, 300, this.getWidth(), 30);
-		contexteGraphique.setColor(Color.white);
-		contexteGraphique.drawLine(10,315,this.getWidth(),315);
 
-	}
-	
 }

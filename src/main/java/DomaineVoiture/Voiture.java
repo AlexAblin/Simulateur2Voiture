@@ -63,8 +63,12 @@ public class Voiture extends Observable {
 	public void inverserDirection() {
 		directionEnDegres +=180 ;
 		directionEnDegres = directionEnDegres % 360;
-		
 	}
+
+    public void tournerADroite() {
+        directionEnDegres += 90 ;
+        directionEnDegres = directionEnDegres % 360;
+    }
 
 	public Object getDirection() {
 	return directionEnDegres;
