@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0" errors="0" skipped="0" tests="7" name="DomaineVoiture.TestVoiture">
+<testsuite failures="0" time="0.673" errors="0" skipped="0" tests="1" name="AppliSimu.CommandeVoitureTest">
   <properties>
     <property name="idea.version" value="13.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -65,11 +65,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testEvolutionXenFonctionVitesseSurUnTopSeconde"/>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testChangementDeSensEtEvolutionDeX"/>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testChangementDeSens"/>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testAccelerationLimite"/>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testAcceleration"/>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testPositionLimiteBasse"/>
-  <testcase time="0" classname="DomaineVoiture.TestVoiture" name="testPositionLimiteHaute"/>
+  <testcase time="0.673" classname="AppliSimu.CommandeVoitureTest" name="testActionPerformed"/>
 </testsuite>

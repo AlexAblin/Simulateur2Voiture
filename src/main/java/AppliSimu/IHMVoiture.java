@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -31,6 +32,7 @@ public class IHMVoiture extends JFrame implements Observer{
 		this.maCommandeVoiture = new CommandeVoiture(this, maVoiture);
 
 		this.setVisible(true);
+
 	}
 
 	public IHMVoiture(Voiture maVoiture) {
@@ -40,7 +42,9 @@ public class IHMVoiture extends JFrame implements Observer{
         rH = new Route(10,300);
 		rV = new Route(300,100);
 		initGraphique();
+
 	}
+
 
 	public IHMVoiture() {
 		super();
@@ -82,9 +86,18 @@ public class IHMVoiture extends JFrame implements Observer{
 	}
 
 	public void dessinerRouteHorizontale(Graphics contexteGraphique){
-		contexteGraphique.fillRect(rH.getX(), rH.getY(), this.getWidth(), 30);
-		contexteGraphique.setColor(Color.white);
-		contexteGraphique.drawLine(rH.getX(), rH.getY()+15,this.getWidth(),rH.getY()+15);
+
+        try
+        {
+            contexteGraphique.fillRect(rH.getX(), rH.getY(), this.getWidth(), 30);
+            //contexteGraphique.fillRect(300,200,20,30);
+            contexteGraphique.setColor(Color.white);
+            contexteGraphique.drawLine(rH.getX(), rH.getY() + 15, this.getWidth(), rH.getY() + 15);
+        }
+        catch (Exception ex)
+        {
+
+        }
 	}
 
 	public void dessinerRouteVerticale(Graphics contexteGraphique){

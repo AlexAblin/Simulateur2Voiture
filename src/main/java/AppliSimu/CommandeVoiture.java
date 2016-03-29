@@ -3,6 +3,8 @@ package AppliSimu;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,9 +18,10 @@ public class CommandeVoiture extends JPanel implements ActionListener{
     private JButton boutonInverserDirection;
     private JButton boutonTournerDroite;
 	private JButton boutonTournerGauche;
-	private JButton boutonArreter;
+    private JButton boutonArreter;
+
 	private Voiture maVoiture;
-	
+
 	
 	public CommandeVoiture (JFrame fenetre, Voiture maVoiture) {
 		
@@ -45,12 +48,12 @@ public class CommandeVoiture extends JPanel implements ActionListener{
 		boutonArreter.addActionListener(this);
 		this.add(boutonArreter);
 
-		fenetre.add(this);
+        fenetre.add(this);
 		this.maVoiture = maVoiture;
-	}
+       }
 
 
-	@Override
+        @Override
 	public void actionPerformed(ActionEvent event) {
         Object bouton = event.getSource();
         if (bouton == boutonAccelerer)
@@ -63,9 +66,10 @@ public class CommandeVoiture extends JPanel implements ActionListener{
 		else if (bouton == boutonTournerGauche) {
 			maVoiture.tournerAGauche();
         }
-		else if (bouton == boutonArreter) {
-			maVoiture.arreter();
-		}
+        else if (bouton == boutonArreter) {
+            maVoiture.arreter();
+        }
+
     }
 	
 

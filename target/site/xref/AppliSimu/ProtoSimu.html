@@ -23,23 +23,24 @@
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  		<strong class="jxr_keyword">final</strong> <a href="../DomaineVoiture/Voiture.html">Voiture</a> maVoiture = <strong class="jxr_keyword">new</strong> <a href="../DomaineVoiture/Voiture.html">Voiture</a> (100, 0, 10);
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  		IHMVoiture monTriangle = <strong class="jxr_keyword">new</strong> <a href="../AppliSimu/IHMVoiture.html">IHMVoiture</a>(maVoiture);
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  		
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  		Timer timerAvancer = <strong class="jxr_keyword">new</strong> Timer(dureeUneSecondeEnMilliSecondes, <strong class="jxr_keyword">new</strong> ActionListener() {
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  			
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  			@Override
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent arg0) {
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  				maVoiture.miseAJourPosition();
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  			}
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  		});
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  		
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>  		timerAvancer.start();
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  		
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  		<strong class="jxr_keyword">while</strong>(<strong class="jxr_keyword">true</strong>){
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  		}
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>  
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  	}
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>  
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>  }
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>          monTriangle.setVisible(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  		
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  		Timer timerAvancer = <strong class="jxr_keyword">new</strong> Timer(dureeUneSecondeEnMilliSecondes, <strong class="jxr_keyword">new</strong> ActionListener() {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  			
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  			@Override
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent arg0) {
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  				maVoiture.miseAJourPosition();
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  			}
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  		});
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  		
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  		timerAvancer.start();
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  		
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  		<strong class="jxr_keyword">while</strong>(<strong class="jxr_keyword">true</strong>){
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  		}
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  	}
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016. All rights reserved.</div>

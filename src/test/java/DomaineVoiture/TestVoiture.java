@@ -62,9 +62,9 @@ public class TestVoiture {
 	@Test
 	public void testPositionLimiteHaute() {
 		
-		maVoiture.setVitesse(1000);
+		maVoiture.setVitesse(3000);
 		maVoiture.miseAJourPosition();
-		assertEquals(1000, maVoiture.getX());
+		assertEquals(3000, maVoiture.getX());
 		
 	}
 	

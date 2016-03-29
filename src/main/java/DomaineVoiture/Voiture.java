@@ -50,8 +50,6 @@ public class Voiture extends Observable {
 		}
 		if (y > 3000)
 			y = 3000;
-		//else if (y < 0)
-			//y = 0
 	}
 
 	private void notificationObservateur() {
@@ -72,7 +70,7 @@ public class Voiture extends Observable {
 			vitesseMetreSeconde += 10;	
 	}
 
-	public Object getVitesse() {
+	public int getVitesse() {
 		return vitesseMetreSeconde;
 	}
 
