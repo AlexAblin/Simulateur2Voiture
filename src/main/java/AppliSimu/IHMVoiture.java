@@ -22,7 +22,7 @@ public class IHMVoiture extends JFrame implements Observer{
 	private double paramatreConversionMetresPixels = 0.5;
 	private Voiture maVoiture;
 	private CommandeVoiture maCommandeVoiture;
-    private Route r;
+    private Route rH,rV;
 	
 	private void initGraphique() {
 		this.setTitle("Simulateur de Voiture");
@@ -37,7 +37,8 @@ public class IHMVoiture extends JFrame implements Observer{
 		super();
 		this.maVoiture = maVoiture;
 		maVoiture.addObserver(this);
-        r = new Route(this);
+        rH = new Route(10,300);
+		rV = new Route(300,100);
 		initGraphique();
 	}
 
@@ -60,8 +61,8 @@ public class IHMVoiture extends JFrame implements Observer{
 	public void paint(Graphics contexteGraphique) {
 		super.paint(contexteGraphique);
 		contexteGraphique.setColor(Color.black);
-		r.dessinerRouteHorizontale(contexteGraphique);
-        r.dessinerRouteVerticale(contexteGraphique);
+		dessinerRouteHorizontale(contexteGraphique);
+        dessinerRouteVerticale(contexteGraphique);
 		contexteGraphique.setColor(Color.red);
 		dessinerVoiture(contexteGraphique);
 	}
@@ -72,8 +73,25 @@ public class IHMVoiture extends JFrame implements Observer{
 		int yMetres = maVoiture.getY();
 		int xPixel = calculerPositionPixels(xMetres);
 		int yPixel = calculerPositionPixels(yMetres);
-		//contexteGraphique.fillRect(xPixel, 300, 30, 15);
-		contexteGraphique.fillRect(xPixel, 300+yPixel, 30, 15);
+		if(maVoiture.getDirection()==0 || maVoiture.getDirection()==180 ) {
+			contexteGraphique.fillRect(xPixel, 300 + yPixel, 30, 15);
+		}
+		else{
+			contexteGraphique.fillRect(xPixel, 300 + yPixel, 15, 30);
+		}
+	}
+
+	public void dessinerRouteHorizontale(Graphics contexteGraphique){
+		contexteGraphique.fillRect(rH.getX(), rH.getY(), this.getWidth(), 30);
+		contexteGraphique.setColor(Color.white);
+		contexteGraphique.drawLine(rH.getX(), rH.getY()+15,this.getWidth(),rH.getY()+15);
+	}
+
+	public void dessinerRouteVerticale(Graphics contexteGraphique){
+		contexteGraphique.setColor(Color.black);
+		contexteGraphique.fillRect(rV.getX(), rV.getY(), 30, this.getHeight());
+		contexteGraphique.setColor(Color.white);
+		contexteGraphique.drawLine(rV.getX()+15,rV.getY(),rV.getX()+15,this.getHeight());
 	}
 
 
