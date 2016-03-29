@@ -1,22 +1,12 @@
 package AppliSimu;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Panel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.util.Observable;
-import java.util.Observer;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
-
 import DomaineVoiture.Route;
 import DomaineVoiture.Voiture;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
 public class IHMVoiture extends JFrame implements Observer{
 
@@ -27,9 +17,9 @@ public class IHMVoiture extends JFrame implements Observer{
 	
 	private void initGraphique() {
 		this.setTitle("Simulateur de Voiture");
-		this.setSize(505, 505);
+		this.setSize(505,505);
 
-		this.maCommandeVoiture = new CommandeVoiture(this, maVoiture);
+		this.maCommandeVoiture = new CommandeVoiture(this,maVoiture);
 
 		this.setVisible(true);
 
@@ -73,15 +63,21 @@ public class IHMVoiture extends JFrame implements Observer{
 
 
 	private void dessinerVoiture(Graphics contexteGraphique) {
-		int xMetres = maVoiture.getX();
-		int yMetres = maVoiture.getY();
-		int xPixel = calculerPositionPixels(xMetres);
-		int yPixel = calculerPositionPixels(yMetres);
-		if(maVoiture.getDirection()==0 || maVoiture.getDirection()==180 ) {
-			contexteGraphique.fillRect(xPixel, 300 + yPixel, 30, 15);
+		try {
+			int xMetres = maVoiture.getX();
+
+			int yMetres = maVoiture.getY();
+			int xPixel = calculerPositionPixels(xMetres);
+			int yPixel = calculerPositionPixels(yMetres);
+			if (maVoiture.getDirection() == 0 || maVoiture.getDirection() == 180) {
+				contexteGraphique.fillRect(xPixel, 300 + yPixel, 30, 15);
+			} else {
+				contexteGraphique.fillRect(xPixel, 300 + yPixel, 15, 30);
+			}
 		}
-		else{
-			contexteGraphique.fillRect(xPixel, 300 + yPixel, 15, 30);
+		catch (Exception ex)
+		{
+
 		}
 	}
 
@@ -101,10 +97,17 @@ public class IHMVoiture extends JFrame implements Observer{
 	}
 
 	public void dessinerRouteVerticale(Graphics contexteGraphique){
-		contexteGraphique.setColor(Color.black);
-		contexteGraphique.fillRect(rV.getX(), rV.getY(), 30, this.getHeight());
-		contexteGraphique.setColor(Color.white);
-		contexteGraphique.drawLine(rV.getX()+15,rV.getY(),rV.getX()+15,this.getHeight());
+
+		try {
+			contexteGraphique.setColor(Color.black);
+			contexteGraphique.fillRect(rV.getX(), rV.getY(), 30, this.getHeight());
+			contexteGraphique.setColor(Color.white);
+			contexteGraphique.drawLine(rV.getX() + 15, rV.getY(), rV.getX() + 15, this.getHeight());
+		}
+		catch (Exception ex)
+		{
+
+		}
 	}
 
 

@@ -1,29 +1,23 @@
 package AppliSimu;
 
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import DomaineVoiture.Voiture;
 
-public class CommandeVoiture extends JPanel implements ActionListener{
-	
-	private JButton boutonAccelerer;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CommandeVoiture extends JPanel implements ActionListener {
+
+    private JButton boutonAccelerer;
     private JButton boutonInverserDirection;
     private JButton boutonTournerDroite;
 	private JButton boutonTournerGauche;
     private JButton boutonArreter;
-
 	private Voiture maVoiture;
 
 	
-	public CommandeVoiture (JFrame fenetre, Voiture maVoiture) {
+	public CommandeVoiture(final JFrame fenetre,final Voiture maVoiture) {
 		
 		super();
 		this.setLayout(new FlowLayout());
@@ -56,21 +50,17 @@ public class CommandeVoiture extends JPanel implements ActionListener{
         @Override
 	public void actionPerformed(ActionEvent event) {
         Object bouton = event.getSource();
-        if (bouton == boutonAccelerer)
+        if (bouton == boutonAccelerer) {
             maVoiture.accelerer();
-        else if (bouton == boutonInverserDirection)
+        }   else if (bouton == boutonInverserDirection) {
             maVoiture.inverserDirection();
-        else if (bouton == boutonTournerDroite) {
+        }   else if (bouton == boutonTournerDroite) {
             maVoiture.tournerADroite();
-		}
-		else if (bouton == boutonTournerGauche) {
+		}   else if (bouton == boutonTournerGauche) {
 			maVoiture.tournerAGauche();
-        }
-        else if (bouton == boutonArreter) {
+        }   else if (bouton == boutonArreter) {
             maVoiture.arreter();
         }
 
     }
-	
-
 }
